@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-ai-ml-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-ai-ml-app
+  template:
+    metadata:
+      labels:
+        app: my-ai-ml-app
+    spec:
+      containers:
+      - name: my-ai-ml-app
+        image: gcr.io/securing-ai/my-ai-ml-app
+        ports:
+        - containerPort: 80
